@@ -28,15 +28,16 @@ Below are the listed completed and/or planned features of the website, those ori
 - A user can easily reach a support agent for answering questions regarding their loan using a chat feature built into the website.
 
 ## Technologies Used
-A list of major technologies used in development of this site.
+A list of major technologies used in development of this site. Those with a " * " I learned outside of class to do this project.
 
 ### Languages
 - Javascript
 - Ruby
 
 ### Libraries/Frameworks
-- React
+- Vue *
 - Ruby on Rails
+- Tailwind CSS *
 - (whatever is used for Auth?)
 - ... Whatever else comes up during development ...
 
