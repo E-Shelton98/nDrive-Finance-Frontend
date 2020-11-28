@@ -57,10 +57,3 @@ I intend to have password requirements be a capital letter, special character, a
 
 ### Navigating through the website
 List various ways to navigate the website here.
-
-
-
-
-
-
-
