@@ -4,8 +4,12 @@
             <p>Placeholder for Image</p>
         </div>
         <div class="bg-purple-500 bg-opacity-50 h-16 p-1 flex justify-around">
-            <button class="font-sans font-bold p-3 my-1 mx-10 rounded-lg cursor-pointer no-underline bg-gray-400 hover:bg-gray-500 block w-30 text-white items-center flex-1 justify-center">Login</button>
-            <button class="font-sans font-bold p-3 my-1 mx-10 rounded-lg cursor-pointer no-underline bg-gray-400 hover:bg-gray-500 block w-30 text-white items-center flex-1 justify-center">Get Financed</button>
+        <router-link to="/signin" class="text-white p-4 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 hover:bg-gray-400">
+            Sign in
+        </router-link>
+        <router-link to="/financing" class="text-white p-4 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 hover:bg-gray-400">
+            Get Financed
+        </router-link>
         </div>
         <div class="bg-gray-100">
             <section class="text-left p-6" >nDrive has worked with dealerships to help over 1 million people get the financing they needed for the car they wanted.
