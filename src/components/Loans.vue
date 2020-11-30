@@ -1,16 +1,16 @@
 <template>
   <div class="max-w-md m-auto py-10">
     <div class="text-red" v-if="error">{{ error }}</div>
-    <div class="grid grid-rows-3 grid-cols-3 h-20 border-solid border-2 border-gray-400 rounded-2xl p-4" v-for="loan in loans" :key="loan.id" :loan="loan">
-      <div class="row-start-1 column-start-1 text-left">Welcome:</div>
-      <div class="row-start-2 column-start-1 text-left">Address:</div>
-      <div class="row-start-3 column-start-1 text-left">Email:</div>
-      <div class="row-start-1 row-end-2 col-start-2 col-end-4 text-left">{{loan.borrower}}</div>
-      <div class="row-start-2 col-start-2 col-end-4 text-left">{{loan.borrowerAddress}}</div>
-      <div class="row-start-3 col-start-2 col-end-4 text-left uppercase">{{loan.borrowerEmail}}</div>
+    <div class="h-20 border-solid border-2 border-gray-400 bg-gray-200 rounded-2xl p-4 flex justify-around">
+      <router-link to="/email" class="p-2 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 bg-purple-500 bg-opacity-50 hover:bg-gray-200">
+            Update Email
+        </router-link>
+      <router-link to="/address" class="p-2 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 bg-purple-500 bg-opacity-50 hover:bg-gray-200">
+            Update Address
+        </router-link>
     </div>
-    <div class="grid grid-rows-10 grid-cols-3 grid-flow-col mt-4 border-solid border-2 border-gray-400 rounded-2xl" v-for="loan in loans" :key="loan.id" :loan="loan">
-      <div class="bg-purple-500 bg-opacity-50 row-start-1 col-start-1 h-24">
+    <div class="grid grid-rows-10 grid-cols-3 grid-flow-col mt-4 border-solid border-2 border-gray-400 rounded-2xl p-2" v-for="loan in loans" :key="loan.id" :loan="loan">
+      <div class="bg-purple-500 bg-opacity-50 row-start-1 col-start-1 h-24 rounded-tl-2xl">
       </div>
       <div class="bg-purple-500 bg-opacity-50 row-start-2 col-start-1 h-20">
         <section>Co-Borrower</section>
@@ -23,7 +23,11 @@
       <div class="bg-purple-500 bg-opacity-50 row-start-7 col-start-1 h-10">Vehicle Model</div>
       <div class="bg-purple-500 bg-opacity-50 row-start-8 col-start-1 h-10">Vehicle Year</div>
       <div class="bg-purple-500 bg-opacity-50 row-start-9 col-start-1 h-10">Vehicle VIN</div>
-      <div class="bg-purple-400 col-span-2 h-24 h-10">10</div>
+      <div class="bg-gray-200 col-span-2 h-24 h-10 text-right px-3 border-t-2 border-r-2 rounded-tr-2xl">
+        <section>{{loan.borrower}}</section>
+        <section>{{loan.borrowerAddress}}</section>
+        <section>{{loan.borrowerEmail}}</section>
+      </div>
       <div class="bg-gray-200 col-span-2 h-20">
         <section v-if="loan.coBorrower">{{loan.coBorrower}}</section>
         <section v-else>N/A</section>
@@ -37,7 +41,7 @@
       <div class="bg-gray-200 col-span-2 h-10">{{loan.vehicleModel}}</div>
       <div class="bg-gray-200 col-span-2 h-10">{{loan.vehicleYear}}</div>
       <div class="bg-gray-200 col-span-2 h-10">{{loan.vehicleVin}}</div>
-      <div class="bg-purple-800 row-start-10 col-start-1 col-span-3 h-24">19</div>
+      <div class="bg-purple-400 row-start-10 col-start-1 col-span-3 h-24 rounded-b-2xl p-8">Payment Section Coming Soon!</div>
     </div>
   </div>
 </template>
