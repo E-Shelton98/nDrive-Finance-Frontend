@@ -3,7 +3,7 @@
         <div class="h-80 bg-gray-300">
             <p>Placeholder for Image</p>
         </div>
-        <div class="bg-purple-500 bg-opacity-50 h-16 p-1 flex justify-around">
+        <div class="bg-purple-400 h-16 p-1 flex justify-around">
         <router-link to="/signin" class="text-white p-4 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 hover:bg-gray-400">
             Sign in
         </router-link>

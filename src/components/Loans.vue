@@ -9,7 +9,7 @@
             Update Address
         </router-link>
     </div>
-    <div class="grid grid-rows-10 grid-cols-3 grid-flow-col mt-4 border-solid border-2 border-gray-400 rounded-2xl p-2" v-for="loan in loans" :key="loan.id" :loan="loan">
+    <div class="grid grid-rows-10 grid-cols-3 grid-flow-col mt-4 border-solid border-2 border-gray-400 rounded-2xl p-2 bg-gray-300" v-for="loan in loans" :key="loan.id" :loan="loan">
       <div class="bg-purple-500 bg-opacity-50 row-start-1 col-start-1 h-24 rounded-tl-2xl">
       </div>
       <div class="bg-purple-500 bg-opacity-50 row-start-2 col-start-1 h-20">
