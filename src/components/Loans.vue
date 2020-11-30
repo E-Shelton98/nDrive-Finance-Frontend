@@ -20,7 +20,7 @@
             <label class="label">Confirm Email</label>
             <input class="input" v-model="borrower.confirmedEmail">
           </div>
-          <input type="submit" value="Update" class="bg-transparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py-2 px-4 mr-2 rounded">
+          <input type="submit" value="Update" class="text-sm hover:bg-purple-400 hover:text-white border-2 border-gray-300 no-underline font-bold py-2 px-4 mr-2 rounded">
         </div>
       </form>
     </div>
@@ -35,7 +35,7 @@
             <label class="label">Confirm Address</label>
             <input class="input" v-model="borrower.confirmedAddress">
           </div>
-          <input type="submit" value="Update" class="bg-transparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py-2 px-4 mr-2 rounded">
+          <input type="submit" value="Update" class="text-sm hover:bg-purple-400 hover:text-white border-2 border-gray-300 no-underline font-bold py-2 px-4 mr-2 rounded">
         </div>
       </form>
     </div>
