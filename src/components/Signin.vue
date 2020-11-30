@@ -1,6 +1,6 @@
 <template>
-  <div class="m-auto">
-    <div class="bg-purple-500 bg-opacity-50 h-10 text-white w-full py-2">
+  <div>
+    <div>
       Sign In
     </div>
     <h3 class="text-lg m-6">Sign in using the account you created at the dealership to be able to view your loan information.</h3>
