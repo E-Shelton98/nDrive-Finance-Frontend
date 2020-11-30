@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="h-80 bg-gray-300">
-            <p>Placeholder for Image</p>
+        <div>
+            <img src='../assets/purple_car_small.jpg'/>
         </div>
         <div class="bg-purple-400 h-16 p-1 flex justify-around">
         <router-link to="/signin" class="text-white p-4 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 hover:bg-gray-400">
