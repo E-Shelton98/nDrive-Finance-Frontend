@@ -2,12 +2,42 @@
   <div class="max-w-md m-auto py-10">
     <div class="text-red" v-if="error">{{ error }}</div>
     <div class="h-20 border-solid border-2 border-gray-400 bg-gray-200 rounded-2xl p-4 flex justify-around">
-      <router-link to="/email" class="p-2 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 bg-purple-500 bg-opacity-50 hover:bg-gray-200">
+      <button class="p-2 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 bg-purple-500 bg-opacity-50 hover:bg-gray-200" @click.prevent="editEmail()">
             Update Email
-        </router-link>
-      <router-link to="/address" class="p-2 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 bg-purple-500 bg-opacity-50 hover:bg-gray-200">
+        </button>
+      <button class="p-2 no-underline border-solid border-2 border-gray-400 rounded-2xl w-36 bg-purple-500 bg-opacity-50 hover:bg-gray-200" @click.prevent="editAddress()">
             Update Address
-        </router-link>
+        </button>
+    </div>
+    <div v-if="this.loans == this.editLoansEmail">
+      <form action="" @submit.prevent="updateLoansEmail(borrower)">
+        <div class="mb-6 p-4 rounded border-4 border-gray-300 mt-4">
+          <div class="mb-6">
+            <label class="label">New Email</label>
+            <input class="input" v-model="borrower.newEmail">
+          </div>
+          <div class="mb-6">
+            <label class="label">Confirm Email</label>
+            <input class="input" v-model="borrower.confirmedEmail">
+          </div>
+          <input type="submit" value="Update" class="bg-transparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py-2 px-4 mr-2 rounded">
+        </div>
+      </form>
+    </div>
+    <div v-if="this.loans == this.editLoansAddress">
+      <form action="" @submit.prevent="updateLoansAddress(borrower)">
+        <div class="mb-6 p-4 rounded border-4 border-gray-300 mt-4">
+          <div class="mb-6">
+            <label class="label">New Address</label>
+            <input class="input" v-model="borrower.newAddress">
+          </div>
+          <div class="mb-6">
+            <label class="label">Confirm Address</label>
+            <input class="input" v-model="borrower.confirmedAddress">
+          </div>
+          <input type="submit" value="Update" class="bg-transparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py-2 px-4 mr-2 rounded">
+        </div>
+      </form>
     </div>
     <div class="grid grid-rows-10 grid-cols-3 grid-flow-col mt-4 border-solid border-2 border-gray-400 rounded-2xl p-2 bg-gray-300" v-for="loan in loans" :key="loan.id" :loan="loan">
       <div class="bg-purple-500 bg-opacity-50 row-start-1 col-start-1 h-24 rounded-tl-2xl">
@@ -52,7 +82,10 @@ export default {
   data () {
     return {
       loans: [],
-      error: ''
+      error: '',
+      editLoansEmail: [],
+      editLoansAddress: [],
+      borrower: {}
     }
   },
   created () {
@@ -69,6 +102,32 @@ export default {
       this.error =
         (error.response && error.response.data && error.response.data.error) ||
         text
+    },
+    editEmail () {
+      this.editLoansEmail = this.loans
+    },
+    editAddress () {
+      this.editLoansAddress = this.loans
+    },
+    updateLoansEmail (borrower) {
+      if (this.borrower.newEmail === this.borrower.confirmedEmail) {
+        this.editLoansEmail = []
+        for (let loan of this.loans) {
+          this.$http.secured.patch(`/api/v1/loans/${loan.id}`, { borrowerEmail: borrower.newEmail })
+            .catch(error => this.setError(error, 'Cannot update email'))
+        }
+        window.location.reload()
+      }
+    },
+    updateLoansAddress (borrower) {
+      if (this.borrower.newAddress === this.borrower.confirmedAddress) {
+        this.editLoansAddress = []
+        for (let loan of this.loans) {
+          this.$http.secured.patch(`/api/v1/loans/${loan.id}`, { borrowerAddress: borrower.newAddress })
+            .catch(error => this.setError(error, 'Cannot update email'))
+        }
+        window.location.reload()
+      }
     }
   }
 }
