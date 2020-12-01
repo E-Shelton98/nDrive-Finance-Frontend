@@ -23,7 +23,7 @@
                 Let nDrive show you how you could qualify for the financing you need!
             </h3>
             <p class="text-purple-500">
-                Collection Calls: CNAC collection calls may be placed Monday-Sunday between 8:00 a.m. and 9:00 p.m. local time as recommended by the Fair Debt Collection Practices Act.
+                Collection Calls: nDrive collection calls may be placed Monday-Sunday between 8:00 a.m. and 9:00 p.m. local time as recommended by the Fair Debt Collection Practices Act.
             </p>
         </div>
     </div>
