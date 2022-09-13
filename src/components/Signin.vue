@@ -39,11 +39,12 @@ export default {
   },
   methods: {
     signin () {
-      this.$http.plain.post('/signin', { email: this.email, password: this.password })
+      this.$http.plain.post('/auth/login', { email: this.email, password: this.password })
         .then(response => this.signinSuccessful(response))
         .catch(error => this.signinFailed(error))
     },
     signinSuccessful (response) {
+      console.log(response)
       if (!response.data.csrf) {
         this.signinFailed(response)
         return
